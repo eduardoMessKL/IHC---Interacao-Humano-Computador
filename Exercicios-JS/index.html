@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumberNinja</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <h1 class="nome-site">NUMBERNINJA</h1>
+            <img src="./assets/409334.png" class="ninjinha">
+        </div>
+        <h5>by Eduardo Messias Kulka</h5>
+        <div class="header2">
+            <p>Sem <span class="tempo">tempo</span> para resolver questões básicas de matemática? <br> 
+                Vem pro NumberNinja e se torne um <span class="verde">Ninja</span> na <span class="verde">praticidade</span>!</p>
+        </div>
+    </header>
+    <div class="background">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-sm-3">
+                <div class="card custom-card">
+                <div class="card-body custom-card-body">
+                    <h2 class="card-title custom-card-title">1. Maior número:</h2>
+                    <div class="inside-card">                      
+                        <label for="numero1" class="text-inside-card">Digite o primeiro número:</label>
+                        <input type="number" id="numero1" class="input" />
+                      
+                        <label for="numero2" class="text-inside-card">Digite o segundo número:</label>
+                        <input type="number" id="numero2" class="input"/>
+                      
+                        <button onclick="encontrarMaiorNumero()" class="btn-lg btn-success" style="color: rgb(255, 255, 255); font-weight: 00; letter-spacing: 1.5px; margin-bottom: 15px;">Encontrar maior número</button>
+                      
+                        <div id="resultado1" class="text-inside-card" style="font-size: large;"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card custom-card">
+                <div class="card-body custom-card-body">
+                    <h2 class="card-title custom-card-title">2. Aprovado ou reprovado:</h2>
+                    <div>
+                        <h3 style="font-size: large; color: white; font-weight: 500;">Nota >= 6 - Aprovado <br>Nota < 6 - Reprovado<br>Nota >=8 - Aprovado com louvor</h3>
+                        <label for="nota" class="text-inside-card">Digite a nota:</label>
+                        <input type="number" id="nota" class="input"/>
+                      
+                        <button onclick="verificarNota()" class="btn-lg btn-success" style="width: 100%; color: rgb(255, 255, 255); font-weight: 00; letter-spacing: 1.5px; margin-bottom: 15px;">Verificar nota</button>
+                      
+                        <div id="resultado2" class="text-inside-card" style="font-size: large;"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card custom-card">
+                <div class="card-body custom-card-body">
+                    <h2 class="card-title custom-card-title">3. Operações com vetor:</h2>
+                    <div class="inside-card">
+                        <label for="numeros" class="text-inside-card">Digite os números separados por vírgula:</label>
+                        <input type="text" id="numeros" class="input"/>                  
+                        <button onclick="calcularMediaVetor()" class="btn-lg btn-success" style="margin-bottom: 10px; color: rgb(255, 255, 255); font-weight: 00; letter-spacing: 1.5px;">Calcular Média</button>
+                        <button onclick="encontrarMaiorNumeroVetor()" class="btn-lg btn-success" style="color: rgb(255, 255, 255); font-weight: 00; letter-spacing: 1.5px; margin-bottom: 15px;">Encontrar Maior Número</button>
+                        <div id="resultado3" class="text-inside-card" style="font-size: large;"></div>
+                        <div id="resultado8" class="text-inside-card" style="font-size: large;"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card custom-card">
+                <div class="card-body custom-card-body">
+                    <h2 class="card-title custom-card-title">4. Letra A ou B:</h2>
+                    <div class="inside-card">
+                        <label for="variavel" class="text-inside-card">Digite o valor da variável:</label>
+                        <input type="text" id="variavel" class="input" />
+                      
+                        <button onclick="verificarVariavel()" class="btn-lg btn-success" style="color: rgb(255, 255, 255); font-weight: 00; letter-spacing: 1.5px; margin-bottom: 15px;">Verificar</button>
+                      
+                        <div id="resultado4" class="text-inside-card" style="font-size: large;"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        
+            <div class="row mt-4">
+            <div class="col-sm-3">
+                <div class="card custom-card">
+                <div class="card-body custom-card-body">
+                    <h2 class="card-title custom-card-title">5. Operações com matriz:</h2>
+                    <div class="inside-card">
+                        <label for="matrixInput" class="text-inside-card">Digite os elementos da matriz::</label>
+                        <input type="text" id="matriz" class="input" />
+                      
+                        <button onclick="calcularSomaMatriz()" class="btn-lg btn-success" style="color: rgb(255, 255, 255); font-weight: 00; letter-spacing: 1.5px; margin-bottom: 10px;">Soma</button>
+                        <button onclick="calcularMediaMatriz()" class="btn-lg btn-success" style="color: rgb(255, 255, 255); font-weight: 00; letter-spacing: 1.5px; margin-bottom: 15px;">Media</button>
+                      
+                        <div id="resultado5" class="text-inside-card" style="font-size: large;"></div>
+                        <div id="resultado9" class="text-inside-card" style="font-size: large;"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card custom-card">
+                <div class="card-body custom-card-body">
+                    <h2 class="card-title custom-card-title">6. Fatorial:</h2>
+                    <div class="inside-card">
+                        <label for="numero" class="text-inside-card">Digite um número:</label>
+                        <input type="number" id="numero" class="input"/>
+                      
+                        <button onclick="calcularFatorial()" class="btn-lg btn-success" style="color: rgb(255, 255, 255); font-weight: 00; letter-spacing: 1.5px; margin-bottom: 15px;" >Calcular</button>
+                      
+                        <div id="resultado6" class="text-inside-card" style="font-size: large;"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card custom-card">
+                <div class="card-body custom-card-body">
+                    <h2 class="card-title custom-card-title">7. As três opções:</h2>
+                    <div>
+                        <label for="opcoes" class="text-inside-card">Escolha uma opção:</label>
+                        <select id="opcoes">
+                          <option value="1">Opção 1</option>
+                          <option value="2">Opção 2</option>
+                          <option value="3">Opção 3</option>
+                        </select>
+                      
+                        <button onclick="exibirMensagem()" class="btn btn-success" style="color: rgb(255, 255, 255); font-weight: 00; letter-spacing: 1.5px; width: 100%; margin-bottom: 15px;">Selecionar </button>
+                      
+                        <div id="resultado7"  class="text-inside-card" style="font-size: large;"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="ninjao">
+                    <img src="./assets/icon-ninja-15.jpg" class="ninjao">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
